@@ -1,0 +1,30 @@
+article#sections {
+  @include outer-container;
+  padding: 1rem 1rem 0;
+  background-color: #E5E3DF;
+  section {
+    @include span-columns(12);
+    h2 {
+      max-height: 3rem;
+      img {
+        max-height: inherit;
+        width: auto;
+      }
+      span {
+        padding-left: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+    &:last-child {
+      p {
+        margin-bottom: 0;
+      }
+    }
+    @include media($desktop) {
+      @include span-columns(4);
+    }
+  }
+  @include media($tablet) {
+    padding: 2rem 2rem 0;
+  }
+}

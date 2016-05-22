@@ -1,0 +1,24 @@
+article#title {
+  @include outer-container;
+  padding: 1rem 1rem 0;
+  background-color: #ffffff;
+  text-align: center;
+  h1 {
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-top: 0.5rem;
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include media($tablet) {
+    padding: 2rem 2rem 0;
+    P {
+      max-width: 80%;
+      margin: 0.8rem auto;
+    }
+  }
+}

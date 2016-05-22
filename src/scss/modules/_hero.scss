@@ -1,0 +1,43 @@
+aside#hero {
+  @include outer-container;
+  position: relative;
+  #hero__image{
+    display: block;
+  }
+  #hero__logo {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: #fff;
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      line-height: 2rem;
+      padding-bottom: 4%;
+    }
+    #hero__logo__image {
+      width: 3rem;
+    }
+    @include media($tablet) {
+      h1 {
+        font-size: 3.5rem;
+        line-height: 3rem;
+        padding-bottom: 3%;
+      }
+      #hero__logo__image {
+        width: 4rem;
+      }
+    }
+    @include media($desktop) {
+      h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+        padding-bottom: 3%;
+      }
+      #hero__logo__image {
+        width: 4rem;
+      }
+    }
+  }
+}

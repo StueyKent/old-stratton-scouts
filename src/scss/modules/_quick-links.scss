@@ -1,0 +1,64 @@
+article#quick-links {
+  @include outer-container;
+  background-color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  ul {
+    @include outer-container;
+    li {
+      @include span-columns(12);
+      //@include omega(2n);
+      margin-bottom: 0.8rem;
+      a {
+        text-decoration: none;
+        color: #333333;
+        display: inline-block;
+        img {
+          height: 2rem;
+          width: auto;
+          @include media($tablet) {
+            height: 3rem;
+          }
+        }
+        p {
+//          max-width: 80%;
+//          margin: 0.8rem auto;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+        p {
+          margin-bottom: 0;
+        }
+      }
+      @include media($tablet) {
+        //@include omega-reset(2n);
+        @include span-columns(3);
+        //@include omega(4n);
+        margin-bottom: 2rem;
+        a {
+          p {
+            max-width: inherit;
+          }
+        }
+      }
+    }
+    &:last-child {
+      display: none;
+    }
+    @include media($tablet) {
+      &:last-child {
+        display: block;
+        li {
+          margin-bottom: 0;
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  @include media($tablet) {
+    padding: 2rem 3rem;
+  }
+}

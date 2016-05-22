@@ -1,0 +1,29 @@
+nav {
+  @include outer-container;
+  padding: 1rem;
+  background-color: #ffffff;
+  ul {
+    @include outer-container;
+    li {
+      @include span-columns(12);
+      margin-bottom: 1rem;
+      img {
+        display: none;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      @include media($tablet) {
+        @include span-columns(4);
+        margin-bottom: 0;
+        
+        img {
+        display: block;
+      }
+      }
+    }
+  }
+  @include media($tablet) {
+    padding: 2rem;
+  }
+}

@@ -1,0 +1,60 @@
+article#ads {
+  @include outer-container;
+  padding: 1rem;
+  background-color: #E5E3DF;
+  section {
+    //height: 300px;
+    &#ad1 {
+      @include span-columns(12);
+      @include omega;
+      background-color: deepskyblue;
+      margin-bottom: 1rem;
+      background-color: #88a016;
+      position: relative;
+      #ad1__copy {
+        @include span-columns(7);
+        color: #ffffff;
+        padding: 1rem;
+        span {
+          font-weight: 700;
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+        
+        @include media(new-breakpoint(min-width 480px 12)){
+          @include span-columns(6);
+        }
+      }
+      #ad1__image {
+        @include span-columns(5);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        img {
+          display: block;
+        }
+        @include media(new-breakpoint(min-width 480px 12)){
+          @include span-columns(6);
+          img {
+            max-height: 12rem;
+            width: auto;
+          }
+        }
+      }
+      @include media($tablet) {
+        @include span-columns(8);
+        margin-bottom: 0;
+      }
+    }
+    &#ad2 {
+      @include span-columns(12);
+      background-color: deepskyblue;
+      @include media($tablet) {
+        @include span-columns(4);
+      }
+    }
+  }
+  @include media($tablet) {
+    padding: 2rem;
+  }
+}
