@@ -618,6 +618,18 @@ article#sections {
     article#sections {
       padding: 2rem 2rem 0; } }
 
+article#articles {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 1rem 0;
+  background-color: #ffffff;
+  text-align: left; }
+  article#articles::after {
+    clear: both;
+    content: "";
+    display: table; }
+
 article#ads {
   max-width: 1200px;
   margin-left: auto;
