@@ -1,0 +1,10 @@
+article#pageNotFound {
+   @include outer-container;
+  padding: 7rem 1rem 6rem;
+   background-color: #ffffff;
+   text-align: center;
+
+  @include media($tablet) {
+    padding: 10rem 1rem 9rem;
+  }
+ }

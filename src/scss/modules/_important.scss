@@ -1,0 +1,45 @@
+aside.important {
+  @include outer-container;
+  @include clearfix;
+  background-color: #29a7df;
+  padding: 0.5rem 0;
+
+  div {
+    padding-left: 2rem;
+    a {
+      font-size: 1.3rem;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      display: block;
+      font-weight: 700;
+      width:100%;
+      line-height: 1.4rem;
+    }
+
+    img {
+      display: block;
+      padding-bottom: 0.4rem;
+      height: 1.9rem;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+
+  @include media($tablet) {
+    div {
+      padding-left: 2rem;
+      a {
+        float: left;
+        text-align: left;
+        line-height: inherit;
+      }
+      img {
+        float: left;
+        padding-bottom: 0;
+        padding-right: 0.8rem;
+      }
+    }
+  }
+
+}

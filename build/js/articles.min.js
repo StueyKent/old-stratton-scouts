@@ -85,14 +85,14 @@
       var searchTerm = $('.searchBox').val();
 
       if (searchTerm !== '') {
-        var url = 'articles.html?search=' + searchTerm;
+        var url = 'articles?search=' + searchTerm;
         window.location = url;
       }
     });
 
     $('.postFilters .reset').click(function (e) {
       e.preventDefault();
-      var url = 'articles.html';
+      var url = 'articles';
       window.location = url;
     });
 
@@ -174,7 +174,7 @@
 
       $('.post__button button').click(function () {
         var id = $(this).parents('.post').data('postId')
-        var url = 'articles.html?postId=' + id;
+        var url = 'articles?postId=' + id;
         window.location = url;
       })
 

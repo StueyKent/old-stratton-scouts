@@ -629,6 +629,21 @@ article#sections {
     article#sections {
       padding: 2rem 2rem 0; } }
 
+article#pageNotFound {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 7rem 1rem 6rem;
+  background-color: #ffffff;
+  text-align: center; }
+  article#pageNotFound::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (min-width: 48rem) {
+    article#pageNotFound {
+      padding: 10rem 1rem 9rem; } }
+
 .spinner {
   margin: 5rem auto;
   width: 70px;
@@ -680,8 +695,8 @@ article#articles {
         margin: 0.5rem 0; }
     @media screen and (min-width: 48rem) {
       article#articles .posts .post {
-        max-width: 80%;
-        margin: 0 auto;
+        /*max-width: 80%;
+        margin: 0 auto;*/
         margin-bottom: 2rem; } }
   article#articles .postControls {
     display: none;
@@ -694,14 +709,17 @@ article#articles {
       margin-bottom: 0.4rem; }
     @media screen and (min-width: 48rem) {
       article#articles .postFilters {
-        max-width: 80%;
-        margin: 0 auto;
+        /* max-width: 80%;
+      margin: 0 auto;*/
         margin-top: 2rem;
         text-align: right; }
         article#articles .postFilters .searchBox,
         article#articles .postFilters .search, article#articles .postFilters .reset {
           width: auto;
           margin-bottom: 0.4rem; } }
+  @media screen and (min-width: 48rem) {
+    article#articles {
+      padding: 1rem 2rem; } }
 
 .articleAside {
   max-width: 1200px;
@@ -880,6 +898,49 @@ article#quick-links {
   @media screen and (min-width: 48rem) {
     article#quick-links {
       padding: 2rem 3rem; } }
+
+aside.important {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #29a7df;
+  padding: 0.5rem 0; }
+  aside.important::after {
+    clear: both;
+    content: "";
+    display: table; }
+  aside.important::after {
+    clear: both;
+    content: "";
+    display: table; }
+  aside.important div {
+    padding-left: 2rem; }
+    aside.important div a {
+      font-size: 1.3rem;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      display: block;
+      font-weight: 700;
+      width: 100%;
+      line-height: 1.4rem; }
+    aside.important div img {
+      display: block;
+      padding-bottom: 0.4rem;
+      height: 1.9rem;
+      width: auto;
+      margin: 0 auto; }
+  @media screen and (min-width: 48rem) {
+    aside.important div {
+      padding-left: 2rem; }
+      aside.important div a {
+        float: left;
+        text-align: left;
+        line-height: inherit; }
+      aside.important div img {
+        float: left;
+        padding-bottom: 0;
+        padding-right: 0.8rem; } }
 
 footer {
   max-width: 1200px;

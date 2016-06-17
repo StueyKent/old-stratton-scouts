@@ -35,8 +35,8 @@ article#articles {
 
     @include media($tablet) {
       .post {
-        max-width: 80%;
-        margin: 0 auto;
+        /*max-width: 80%;
+        margin: 0 auto;*/
         margin-bottom: 2rem;
       }
     }
@@ -48,7 +48,6 @@ article#articles {
   }
 
   .postFilters {
-
     margin-top: 2rem;
 
     .searchBox,
@@ -58,8 +57,9 @@ article#articles {
     }
 
     @include media($tablet) {
-      max-width: 80%;
-      margin: 0 auto;
+     /* max-width: 80%;
+      margin: 0 auto;*/
+
       margin-top: 2rem;
       text-align: right;
 
@@ -69,6 +69,10 @@ article#articles {
         margin-bottom: 0.4rem;
       }
     }
+  }
+
+  @include media($tablet) {
+    padding: 1rem 2rem;
   }
 }
 
@@ -94,4 +98,3 @@ article#articles {
     }
   }
 }
-

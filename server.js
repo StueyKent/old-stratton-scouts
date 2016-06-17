@@ -1,47 +1,44 @@
-var express = require('express');
+var express        = require( 'express' );
+var bodyParser     = require( 'body-parser' );
+var methodOverride = require( 'method-override' );
+var path = require( 'path' );
+
 var app = express();
-var http = require('http').Server(app);
-var router = express.Router();
-var bodyParser = require('body-parser');
-var jsonParser = bodyParser.json();
 
-/*
----------
-Express
----------
-*/
+var port = process.env.PORT || 3000;
 
-app.enable('trust proxy');
-app.use(bodyParser.json());
-app.use('/build', router);
-app.use(express.static(__dirname + '/build'));
+app.use( bodyParser.json());
+app.use( bodyParser.urlencoded({ extended: true }));
+app.use( methodOverride( 'X-HTTP-Method-Override' ));
+app.use( express.static( __dirname + '/build' ));
 
-router.get('/', function(req, res, next) {
+app.get( '/', function( req, res) {
+
+    console.log("here")
     var options = {
         root: __dirname
     }
-    
-    res.sendFile('index.html', options);
-});
+      res.sendFile( path.join('build', 'index.html' ), options);
+  });
 
+app.get('/:name', function(req, res) {
 
-router.get('/:name', function(req, res, next) {
-    
     var options = {
         root: __dirname
     }
-    
+
     var fileName = req.params.name;
-    
+
     if (fileName.search('.html') === -1) {
-        
-        fileName += '.html'    
+
+        fileName += '.html'
     }
-    
-    res.sendFile(fileName, options, function (err) {
+
+    res.sendFile(path.join('build', fileName ), options, function (err) {
         if (err) {
             console.log(err);
-            res.status(err.status).end();
+            //res.status(err.status).end();
+            res.sendFile( path.join('build', '404.html' ), options);
         }
         else {
             console.log('Sent:', fileName);
@@ -49,6 +46,6 @@ router.get('/:name', function(req, res, next) {
     });
 });
 
-http.listen(process.env.PORT || 3000, function(){
-    console.log('Science happening on *:3000');
+app.listen( port, function() {
+    console.log( 'Running at http://localhost:' + port );
 });

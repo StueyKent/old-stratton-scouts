@@ -6,10 +6,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>1st Stratton Scout Group</title>
-  <meta name="keywords"
-        content="Scouts, cubs, beavers, explorers, adventure, kids activities, outdoor, young people, volunteers,"/>
-  <meta name="description"
-        content="Every year we help over 450,000 young people in the UK enjoy new adventures. Start your adventure today and find out about Scouting near you!">
+  <meta name="keywords" content="Scouts, cubs, beavers, explorers, adventure, kids activities, outdoor, young people, volunteers," />
+  <meta name="description" content="Every year we help over 450,000 young people in the UK enjoy new adventures. Start your adventure today and find out about Scouting near you!">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -63,9 +61,7 @@
       <li><a href="https://twitter.com/1stSSMScouts" target="_blank"><img src="/images/twitter.svg" alt="Twitter Icon"></a></li>
     </ul>
   </div>
-</header>
-
-<aside id="hero">
+</header> <aside id="hero">
   <div id="hero__logo">
     <img id="hero__logo__image" src="images/flur-de-les-white.svg" alt="">
     <h1>SCOUTING</h1>
@@ -77,39 +73,69 @@
 </aside>
 
 <main>
-  <article id="articles">
-  <article id="title">
-    <h1>1st Stratton
-      <nobr>St Margaret</nobr>
-      Scout Group
-    </h1>
-    <h2>Latest news from the group</h2>
-  </article>
-  <div class="postFilters">
-    <input class="searchBox" type="text" name="search">
-    <div class="button button--large search">
-      <a href="">Search</a>
-    </div>
-    <div class="button button--large reset">
-      <a href="">Reset filters</a>
-    </div>
-  </div>
-  <div class="posts"></div>
-  <div class="spinner">
-    <div class="bounce1"></div>
-    <div class="bounce2"></div>
-    <div class="bounce3"></div>
-  </div>
-  <div class="postControls">
-    <div class="button button--large">
-      <a href="">More articles</a>
-    </div>
-  </div>
+  <article id="pageNotFound">
+  <h1>Sorry</h1>
+  <h2>We can't seem to find the<br>page you're looking for.</h2>
+</article> <article id=quick-links>
+  <ul>
+    <li>
+      <a href="https://goo.gl/wG7pdL">
+        <img src="images/contact-icon.svg" alt="">
+        <h2>Contact Us</h2>
+        <p>Have you got a question for us or want to let us know what you have been thinking about? Fill out our contact form and someone will get back to you. </p>
+      </a>
+    </li>
+    <li>
+      <a href="https://goo.gl/9qF2Ov">
+        <img src="images/waiting-list-icon.svg" alt="">
+        <h2>Waiting List</h2>
+        <p>If you are in the local community and want be a part of the adventure fill out our waiting list form and get involved.</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="images/newsletter-icon.svg" alt="">
+        <h2>Newsletter</h2>
+        <p>Coming soon! Our newsletter has everything you need to know about what the group has been up to and any important future events.</p>
+      </a>
+    </li>
+    <li>
+      <a href="https://itunes.apple.com/gb/app/my-badges-scout-association/id429387936?mt=8">
+        <img src="images/badge-icon.svg" alt="">
+        <h2>Badges</h2>
+        <p>There are a huge number of badges available to young people across all sections of Scouting.</p>
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a href="http://www.swindonnorthscouts.org.uk/">
+        <img src="images/swindon-north-icon.svg" alt="">
+        <h2>Swindon North</h2>
+        <p>With 14 Scout groups and 6 Explorer units the Swindon North website is home for everything Scouting in the district.</p>
+      </a>
+    </li>
+    <li>
+      <a href="http://scouts.org.uk/home/">
+        <img src="images/flur-de-les.svg" alt="">
+        <h2>Scouting UK</h2>
+        <p>We are the UK's biggest mixed youth organisation. We change lives by offering  fun and challenging activities, unique experiences and everyday adventure. </p>
+      </a>
+    </li>
+    <li>
+      <a href="http://scouts.org.uk/get-involved/">
+        <img src="images/join-icon.svg" alt="">
+        <h2>Join Today</h2>
+        <p>Are you ready? Find out about Scouting near you now.</p>
+      </a>
+    </li>
+  </ul>
 </article>
-<aside class="articleAside">
-  <div class="articleAside__image"></div>
-  <div class="articleAside__map" id="map"></div>
-</aside>
+
+  <article>
+    <section id="map"></section>
+  </article>
+
 </main>
 
 <footer>
@@ -125,38 +151,10 @@
   </div>
 </footer>
 
-<script id="articleTpl" type="text/template">
-  <article class="post" data-post-id={{id}}>
-    <div class="post__labels">
-      <ul>
-        {{#labels}}
-        <li>
-          <div class="button"><a href="/articles?label={{.}}">{{.}}</a></div>
-        </li>
-        {{/labels}}
-      </ul>
-    </div>
-    <div class="post__details">
-      <h2>{{title}}</h2>
-      <span>Posted by {{author.displayName}} on {{updated}}</span>
-    </div>
-    <div class="post__content">{{{content}}}</div>
-    {{#restricted}}
-    <div class="post__button">
-      <button>Read more</button>
-    </div>
-    {{/restricted}}
-  </article>
-</script>
-
-<script src="js/vendor/mustache.min.js"></script>
 <script src="js/vendor/jquery-2.1.4.min.js"></script>
 <script src="js/vendor/jquery.debouncedresize.js"></script>
-
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCumdFvfGytMfpdxl-4Zn5B9jHff2s0u4Q&callback=initMap"></script>
 <script src="js/maps.min.js"></script>
-<script src="js/helpers.min.js"></script>
-<script src="js/articles.min.js"></script>
 <script src="js/default.min.js"></script>
 
 </body>
