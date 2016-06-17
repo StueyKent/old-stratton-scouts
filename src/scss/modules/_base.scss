@@ -59,3 +59,21 @@ section#map {
   @include outer-container;
   height: 400px;
 }
+
+.button {
+  display: inline-block;
+  background-color: #333;
+  text-align: center;
+  a {
+    padding: 0.4rem 1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &.button--large {
+    a{
+      font-size: 1.4rem;
+    }
+  }
+
+}

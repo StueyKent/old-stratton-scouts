@@ -1,0 +1,23 @@
+<script id="articleTpl" type="text/template">
+  <article class="post" data-post-id={{id}}>
+    <div class="post__labels">
+      <ul>
+        {{#labels}}
+        <li>
+          <div class="button"><a href="/articles.html?label={{.}}">{{.}}</a></div>
+        </li>
+        {{/labels}}
+      </ul>
+    </div>
+    <div class="post__details">
+      <h2>{{title}}</h2>
+      <span>Posted by {{author.displayName}} on {{updated}}</span>
+    </div>
+    <div class="post__content">{{{content}}}</div>
+    {{#restricted}}
+    <div class="post__button">
+      <button>Read more</button>
+    </div>
+    {{/restricted}}
+  </article>
+</script>
