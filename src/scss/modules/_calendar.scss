@@ -1,0 +1,21 @@
+article#calendar {
+  @include outer-container;
+  padding: 1rem;
+  background-color: #ffffff;
+  #calendar__graphic {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  .gcal-event {
+    background-color: #29a7df;
+  }
+  @include media($tablet) {
+    padding: 1rem 2rem;
+    #calendar__graphic {
+      max-width: 80%;
+      margin: 0 auto;
+      margin-top: 2rem;
+    }
+  }
+}
