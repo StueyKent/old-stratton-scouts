@@ -12,12 +12,19 @@ app.use( bodyParser.urlencoded({ extended: true }));
 app.use( methodOverride( 'X-HTTP-Method-Override' ));
 app.use( express.static( __dirname + '/build' ));
 
+app.get('/*', function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+    res.redirect(301,  req.protocol + '://' + req.hostname);
+  } else {
+    next();
+  }
+});
+
 app.get( '/', function( req, res) {
 
-    console.log("here")
     var options = {
         root: __dirname
-    }
+    };
       res.sendFile( path.join('build', 'index.html' ), options);
   });
 
@@ -25,7 +32,7 @@ app.get('/:name', function(req, res) {
 
     var options = {
         root: __dirname
-    }
+    };
 
     var fileName = req.params.name;
 
