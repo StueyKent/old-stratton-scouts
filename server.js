@@ -1,58 +1,11 @@
-var express        = require( 'express' );
-var bodyParser     = require( 'body-parser' );
-var methodOverride = require( 'method-override' );
-var path = require( 'path' );
+const path = require('path');
+const StaticRouter = require("./libs/stueyKent/expressServer/staticRouter");
 
-var app = express();
+const Middleware = require("./libs/stueyKent/expressServer/middleware");
+const Server = require("./libs/stueyKent/expressServer/server");
 
-var port = process.env.PORT || 3000;
 
-app.use( bodyParser.json());
-app.use( bodyParser.urlencoded({ extended: true }));
-app.use( methodOverride( 'X-HTTP-Method-Override' ));
-app.use( express.static( __dirname + '/build' ));
-
-app.get('/*', function(req, res, next) {
-  if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect(301,  req.protocol + '://' + req.hostname);
-  } else {
-    next();
-  }
-});
-
-app.get( '/', function( req, res) {
-
-    var options = {
-        root: __dirname
-    };
-      res.sendFile( path.join('build', 'index.html' ), options);
-  });
-
-app.get('/:name', function(req, res) {
-
-    var options = {
-        root: __dirname
-    };
-
-    var fileName = req.params.name;
-
-    if (fileName.search('.html') === -1) {
-
-        fileName += '.html'
-    }
-
-    res.sendFile(path.join('build', fileName ), options, function (err) {
-        if (err) {
-            console.log(err);
-            //res.status(err.status).end();
-            res.sendFile( path.join('build', '404.html' ), options);
-        }
-        else {
-            console.log('Sent:', fileName);
-        }
-    });
-});
-
-app.listen( port, function() {
-    console.log( 'Running at http://localhost:' + port );
-});
+let middleware = new Middleware();
+let staticRouter = new StaticRouter(path.join(__dirname, 'build'), middleware);
+let server = new Server(path.join(__dirname, 'build'), [staticRouter]);
+server.init();
