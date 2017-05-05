@@ -35,13 +35,19 @@ class StaticRouter {
   }
 
   page(req, res) {
+
+
     let filename = req.params.page.replace(/(.html)/g,"");
+
+    if(filename !== 'robots.txt' &&  filename !== 'sitemap_location.xml'){
+      filename = filename + '.html';
+    }
 
     let options = {
       root: this._root
     };
 
-    res.sendFile(filename + '.html', options, (err) => {
+    res.sendFile(filename, options, (err) => {
       if(err) {
         res.status(404).sendFile('404.html', options);
       }
